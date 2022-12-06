@@ -1,8 +1,8 @@
 # Jarkom-Modul5-E14-2022
 
-| Nama                   | NRP        |
-| ---------------------- | ---------- |
-| Dhafin Almas Nusantara | 5025201064 |
+| Nama                   | NRP        | prefix  |
+| ---------------------- | ---------- | ------- |
+| Dhafin Almas Nusantara | 5025201064 | 192.199 |
 
 ## Topologi
 
@@ -10,16 +10,16 @@
 
 ## VLSM
 
-| Node  | Alokasi | Netmask | IP           |
-| ----- | ------- | ------- | ------------ |
-| A1    | 2       | /30     | 192.199.6.64 |
-| A2    | 256     | /24     | 192.199.4.0  |
-| A3    | 201     | /24     | 192.199.5.0  |
-| A4    | 3       | /30     | 192.199.6.68 |
-| A5    | 2       | /30     | 192.199.6.72 |
-| A6    | 701     | /22     | 192.199.0.0  |
-| A7    | 3       | /30     | 192.199.6.76 |
-| A8    | 63      | /26     | 192.199.6.0  |
+| Node  | Alokasi | Netmask | IP            |
+| ----- | ------- | ------- | ------------- |
+| A1    | 2       | /30     | 192.199.7.144 |
+| A2    | 256     | /23     | 192.199.4.0   |
+| A3    | 201     | /24     | 192.199.6.0   |
+| A4    | 3       | /29     | 192.199.7.128 |
+| A5    | 2       | /30     | 192.199.7.148 |
+| A6    | 701     | /22     | 192.199.0.0   |
+| A7    | 3       | /29     | 192.199.7.136 |
+| A8    | 63      | /25     | 192.199.7.0   |
 | Total | 1231    | /21     |
 
 ## Pohon VLSM
@@ -36,12 +36,12 @@ iface eth0 inet dhcp
 
 auto eth1
 iface eth1 inet static
-address 192.199.6.65
+address 192.199.7.145
 netmask 255.255.255.252
 
 auto eth2
 iface eth2 inet static
-address 192.199.6.73
+address 192.199.7.149
 netmask 255.255.255.252
 ```
 
@@ -50,9 +50,9 @@ netmask 255.255.255.252
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.74
+address 192.199.7.150
 netmask 255.255.255.252
-gateway 192.199.6.73
+gateway 192.199.7.149
 
 auto eth1
 iface eth1 inet static
@@ -61,13 +61,13 @@ netmask 255.255.252.0
 
 auto eth2
 iface eth2 inet static
-address 192.199.6.1
-netmask 255.255.255.192
+address 192.199.7.1
+netmask 255.255.255.128
 
 auto eth3
 iface eth3 inet static
-address 192.199.6.77
-netmask 255.255.255.252
+address 192.199.7.137
+netmask 255.255.255.248
 ```
 
 - Wise
@@ -75,9 +75,9 @@ netmask 255.255.255.252
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.78
-netmask 255.255.255.252
-gateaway 192.199.6.77
+address 192.199.7.138
+netmask 255.255.255.248
+gateaway 192.199.7.137
 ```
 
 - Eden
@@ -85,9 +85,9 @@ gateaway 192.199.6.77
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.79
-netmask 255.255.255.252
-gateaway 192.199.6.77
+address 192.199.7.139
+netmask 255.255.255.248
+gateaway 192.199.7.137
 ```
 
 - Forger
@@ -95,9 +95,9 @@ gateaway 192.199.6.77
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.2
-netmask 255.255.255.192
-gateaway 192.199.6.1
+address 192.199.7.2
+netmask 255.255.255.128
+gateaway 192.199.7.1
 ```
 
 - Desmond
@@ -116,23 +116,23 @@ gateaway 192.199.0.1
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.66
+address 192.199.7.146
 netmask 255.255.255.252
-gateway 192.199.6.65
+gateway 192.199.7.146
 
 auto eth1
 iface eth1 inet static
 address 192.199.4.1
-netmask 255.255.255.0
+netmask 255.255.254.0
 
 auto eth2
 iface eth2 inet static
-address 192.199.6.69
-netmask 255.255.255.252
+address 192.199.7.129
+netmask 255.255.255.248
 
 auto eth3
 iface eth3 inet static
-address 192.199.5.1
+address 192.199.6.1
 netmask 255.255.255.0
 ```
 
@@ -142,7 +142,7 @@ netmask 255.255.255.0
 auto eth0
 iface eth0 inet static
 address 192.199.4.2
-netmask 255.255.255.0
+netmask 255.255.254.0
 gateway 192.199.4.1
 ```
 
@@ -151,9 +151,9 @@ gateway 192.199.4.1
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.5.2
+address 192.199.6.2
 netmask 255.255.255.0
-gateway 192.199.5.1
+gateway 192.199.6.1
 ```
 
 - Garden
@@ -161,9 +161,9 @@ gateway 192.199.5.1
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.70
-netmask 255.255.255.252
-gateway 192.199.5.69
+address 192.199.7.130
+netmask 255.255.255.248
+gateway 192.199.7.129
 ```
 
 - SSS
@@ -171,9 +171,9 @@ gateway 192.199.5.69
 ```
 auto eth0
 iface eth0 inet static
-address 192.199.6.71
-netmask 255.255.255.252
-gateway 192.199.5.69
+address 192.199.7.131
+netmask 255.255.255.248
+gateway 192.199.7.129
 ```
 
 ## Config Routing
